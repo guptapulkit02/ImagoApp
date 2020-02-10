@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		3F8539E023F15C2B00DC8939 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8539DF23F15C2B00DC8939 /* ViewController.swift */; };
 		3F8539E523F15C2D00DC8939 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F8539E423F15C2D00DC8939 /* Assets.xcassets */; };
 		3F8539E823F15C2D00DC8939 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F8539E623F15C2D00DC8939 /* LaunchScreen.storyboard */; };
+		41F63369B65BC5F515E281A9 /* Pods_ImagoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A151786FB429D72DE8AE48F6 /* Pods_ImagoApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		3F8539E423F15C2D00DC8939 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F8539E723F15C2D00DC8939 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F8539E923F15C2D00DC8939 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B5FEE455FCACD44A77B4456 /* Pods-ImagoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImagoApp.debug.xcconfig"; path = "Target Support Files/Pods-ImagoApp/Pods-ImagoApp.debug.xcconfig"; sourceTree = "<group>"; };
+		A151786FB429D72DE8AE48F6 /* Pods_ImagoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImagoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C36E4FCE04BBFC77DA56245B /* Pods-ImagoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImagoApp.release.xcconfig"; path = "Target Support Files/Pods-ImagoApp/Pods-ImagoApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,61 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41F63369B65BC5F515E281A9 /* Pods_ImagoApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F6D945123F1657E00B1FF37 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3F6D945523F167F000B1FF37 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3F6D945623F167F900B1FF37 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3F6D945723F1680200B1FF37 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3F8539DB23F15C2B00DC8939 /* AppDelegate.swift */,
+				3F8539DD23F15C2B00DC8939 /* SceneDelegate.swift */,
+				3F8539DF23F15C2B00DC8939 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3F6D945823F1680900B1FF37 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3F8539E423F15C2D00DC8939 /* Assets.xcassets */,
+				3F8539E623F15C2D00DC8939 /* LaunchScreen.storyboard */,
+				3F8539E923F15C2D00DC8939 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		3F8539CF23F15C2B00DC8939 = {
 			isa = PBXGroup;
 			children = (
 				3F8539DA23F15C2B00DC8939 /* ImagoApp */,
 				3F8539D923F15C2B00DC8939 /* Products */,
+				8D30AC5CE8A80740F45E8A3E /* Pods */,
+				A39130C0C1609D9B2815D8A5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +102,30 @@
 		3F8539DA23F15C2B00DC8939 /* ImagoApp */ = {
 			isa = PBXGroup;
 			children = (
-				3F8539DB23F15C2B00DC8939 /* AppDelegate.swift */,
-				3F8539DD23F15C2B00DC8939 /* SceneDelegate.swift */,
-				3F8539DF23F15C2B00DC8939 /* ViewController.swift */,
-				3F8539E423F15C2D00DC8939 /* Assets.xcassets */,
-				3F8539E623F15C2D00DC8939 /* LaunchScreen.storyboard */,
-				3F8539E923F15C2D00DC8939 /* Info.plist */,
+				3F6D945823F1680900B1FF37 /* Resources */,
+				3F6D945723F1680200B1FF37 /* Controller */,
+				3F6D945623F167F900B1FF37 /* ViewModel */,
+				3F6D945523F167F000B1FF37 /* Model */,
+				3F6D945123F1657E00B1FF37 /* View */,
 			);
 			path = ImagoApp;
+			sourceTree = "<group>";
+		};
+		8D30AC5CE8A80740F45E8A3E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7B5FEE455FCACD44A77B4456 /* Pods-ImagoApp.debug.xcconfig */,
+				C36E4FCE04BBFC77DA56245B /* Pods-ImagoApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A39130C0C1609D9B2815D8A5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A151786FB429D72DE8AE48F6 /* Pods_ImagoApp.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +135,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3F8539EC23F15C2D00DC8939 /* Build configuration list for PBXNativeTarget "ImagoApp" */;
 			buildPhases = (
+				71602519437AE5F34B3E9FBE /* [CP] Check Pods Manifest.lock */,
 				3F8539D423F15C2B00DC8939 /* Sources */,
 				3F8539D523F15C2B00DC8939 /* Frameworks */,
 				3F8539D623F15C2B00DC8939 /* Resources */,
+				F658B677BA5B0728A8B6D381 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -128,6 +194,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		71602519437AE5F34B3E9FBE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ImagoApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F658B677BA5B0728A8B6D381 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ImagoApp/Pods-ImagoApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ImagoApp/Pods-ImagoApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ImagoApp/Pods-ImagoApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3F8539D423F15C2B00DC8939 /* Sources */ = {
@@ -270,6 +378,7 @@
 		};
 		3F8539ED23F15C2D00DC8939 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B5FEE455FCACD44A77B4456 /* Pods-ImagoApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -288,6 +397,7 @@
 		};
 		3F8539EE23F15C2D00DC8939 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C36E4FCE04BBFC77DA56245B /* Pods-ImagoApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
