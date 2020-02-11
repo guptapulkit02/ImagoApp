@@ -8,5 +8,7 @@ target 'ImagoApp' do
   # Pods for ImagoApp
 
 pod 'SnapKit', '~> 5.0.1'
+pod 'Alamofire'
+
 
 end

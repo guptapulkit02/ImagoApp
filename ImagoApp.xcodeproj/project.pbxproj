@@ -7,22 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F6D945A23F16DA700B1FF37 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D945923F16DA700B1FF37 /* Constants.swift */; };
+		3F6D945C23F170F900B1FF37 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F6D945B23F170F900B1FF37 /* Default-568h@2x.png */; };
+		3F6D946023F18B2400B1FF37 /* ImagoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D945F23F18B2400B1FF37 /* ImagoModel.swift */; };
+		3F6D946223F18B4F00B1FF37 /* InfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D946123F18B4F00B1FF37 /* InfoModel.swift */; };
+		3F6D946423F18EBE00B1FF37 /* ImagoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D946323F18EBE00B1FF37 /* ImagoTableViewCell.swift */; };
+		3F6D946A23F1947100B1FF37 /* LazyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D946923F1947100B1FF37 /* LazyImageView.swift */; };
 		3F8539DC23F15C2B00DC8939 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8539DB23F15C2B00DC8939 /* AppDelegate.swift */; };
 		3F8539DE23F15C2B00DC8939 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8539DD23F15C2B00DC8939 /* SceneDelegate.swift */; };
-		3F8539E023F15C2B00DC8939 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8539DF23F15C2B00DC8939 /* ViewController.swift */; };
+		3F8539E023F15C2B00DC8939 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8539DF23F15C2B00DC8939 /* ImageViewController.swift */; };
 		3F8539E523F15C2D00DC8939 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F8539E423F15C2D00DC8939 /* Assets.xcassets */; };
 		3F8539E823F15C2D00DC8939 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F8539E623F15C2D00DC8939 /* LaunchScreen.storyboard */; };
+		3F8EB2AF23F29CE400AADF97 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8EB2AE23F29CE400AADF97 /* Service.swift */; };
+		3F8EB2B123F29D8B00AADF97 /* ImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8EB2B023F29D8B00AADF97 /* ImageViewModel.swift */; };
+		3F8EB2B323F29D9C00AADF97 /* ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8EB2B223F29D9C00AADF97 /* ErrorViewModel.swift */; };
+		3F8EB2B523F29DEB00AADF97 /* InfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8EB2B423F29DEB00AADF97 /* InfoViewModel.swift */; };
+		3F8EB2B723F2A15300AADF97 /* ImageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8EB2B623F2A15300AADF97 /* ImageError.swift */; };
+		3F8EB2B923F2A51D00AADF97 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8EB2B823F2A51D00AADF97 /* Utility.swift */; };
+		3F8EB2BB23F2E03900AADF97 /* ErrorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8EB2BA23F2E03900AADF97 /* ErrorCell.swift */; };
 		41F63369B65BC5F515E281A9 /* Pods_ImagoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A151786FB429D72DE8AE48F6 /* Pods_ImagoApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F6D945923F16DA700B1FF37 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3F6D945B23F170F900B1FF37 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		3F6D945F23F18B2400B1FF37 /* ImagoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagoModel.swift; sourceTree = "<group>"; };
+		3F6D946123F18B4F00B1FF37 /* InfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModel.swift; sourceTree = "<group>"; };
+		3F6D946323F18EBE00B1FF37 /* ImagoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagoTableViewCell.swift; sourceTree = "<group>"; };
+		3F6D946923F1947100B1FF37 /* LazyImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyImageView.swift; sourceTree = "<group>"; };
 		3F8539D823F15C2B00DC8939 /* ImagoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImagoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F8539DB23F15C2B00DC8939 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F8539DD23F15C2B00DC8939 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3F8539DF23F15C2B00DC8939 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3F8539DF23F15C2B00DC8939 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		3F8539E423F15C2D00DC8939 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F8539E723F15C2D00DC8939 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F8539E923F15C2D00DC8939 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F8EB2AE23F29CE400AADF97 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		3F8EB2B023F29D8B00AADF97 /* ImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewModel.swift; sourceTree = "<group>"; };
+		3F8EB2B223F29D9C00AADF97 /* ErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewModel.swift; sourceTree = "<group>"; };
+		3F8EB2B423F29DEB00AADF97 /* InfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewModel.swift; sourceTree = "<group>"; };
+		3F8EB2B623F2A15300AADF97 /* ImageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageError.swift; sourceTree = "<group>"; };
+		3F8EB2B823F2A51D00AADF97 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		3F8EB2BA23F2E03900AADF97 /* ErrorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCell.swift; sourceTree = "<group>"; };
 		7B5FEE455FCACD44A77B4456 /* Pods-ImagoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImagoApp.debug.xcconfig"; path = "Target Support Files/Pods-ImagoApp/Pods-ImagoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A151786FB429D72DE8AE48F6 /* Pods_ImagoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImagoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C36E4FCE04BBFC77DA56245B /* Pods-ImagoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImagoApp.release.xcconfig"; path = "Target Support Files/Pods-ImagoApp/Pods-ImagoApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -43,6 +69,9 @@
 		3F6D945123F1657E00B1FF37 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3F6D946323F18EBE00B1FF37 /* ImagoTableViewCell.swift */,
+				3F6D946923F1947100B1FF37 /* LazyImageView.swift */,
+				3F8EB2BA23F2E03900AADF97 /* ErrorCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -50,6 +79,8 @@
 		3F6D945523F167F000B1FF37 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3F6D946123F18B4F00B1FF37 /* InfoModel.swift */,
+				3F6D945F23F18B2400B1FF37 /* ImagoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -57,6 +88,9 @@
 		3F6D945623F167F900B1FF37 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				3F8EB2B023F29D8B00AADF97 /* ImageViewModel.swift */,
+				3F8EB2B223F29D9C00AADF97 /* ErrorViewModel.swift */,
+				3F8EB2B423F29DEB00AADF97 /* InfoViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -66,7 +100,7 @@
 			children = (
 				3F8539DB23F15C2B00DC8939 /* AppDelegate.swift */,
 				3F8539DD23F15C2B00DC8939 /* SceneDelegate.swift */,
-				3F8539DF23F15C2B00DC8939 /* ViewController.swift */,
+				3F8539DF23F15C2B00DC8939 /* ImageViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -76,7 +110,10 @@
 			children = (
 				3F8539E423F15C2D00DC8939 /* Assets.xcassets */,
 				3F8539E623F15C2D00DC8939 /* LaunchScreen.storyboard */,
-				3F8539E923F15C2D00DC8939 /* Info.plist */,
+				3F6D945923F16DA700B1FF37 /* Constants.swift */,
+				3F8EB2AE23F29CE400AADF97 /* Service.swift */,
+				3F8EB2B623F2A15300AADF97 /* ImageError.swift */,
+				3F8EB2B823F2A51D00AADF97 /* Utility.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -84,6 +121,7 @@
 		3F8539CF23F15C2B00DC8939 = {
 			isa = PBXGroup;
 			children = (
+				3F6D945B23F170F900B1FF37 /* Default-568h@2x.png */,
 				3F8539DA23F15C2B00DC8939 /* ImagoApp */,
 				3F8539D923F15C2B00DC8939 /* Products */,
 				8D30AC5CE8A80740F45E8A3E /* Pods */,
@@ -102,6 +140,7 @@
 		3F8539DA23F15C2B00DC8939 /* ImagoApp */ = {
 			isa = PBXGroup;
 			children = (
+				3F8539E923F15C2D00DC8939 /* Info.plist */,
 				3F6D945823F1680900B1FF37 /* Resources */,
 				3F6D945723F1680200B1FF37 /* Controller */,
 				3F6D945623F167F900B1FF37 /* ViewModel */,
@@ -190,6 +229,7 @@
 			files = (
 				3F8539E823F15C2D00DC8939 /* LaunchScreen.storyboard in Resources */,
 				3F8539E523F15C2D00DC8939 /* Assets.xcassets in Resources */,
+				3F6D945C23F170F900B1FF37 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,9 +282,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F8539E023F15C2B00DC8939 /* ViewController.swift in Sources */,
+				3F8EB2B923F2A51D00AADF97 /* Utility.swift in Sources */,
+				3F8539E023F15C2B00DC8939 /* ImageViewController.swift in Sources */,
 				3F8539DC23F15C2B00DC8939 /* AppDelegate.swift in Sources */,
+				3F8EB2B523F29DEB00AADF97 /* InfoViewModel.swift in Sources */,
 				3F8539DE23F15C2B00DC8939 /* SceneDelegate.swift in Sources */,
+				3F6D946423F18EBE00B1FF37 /* ImagoTableViewCell.swift in Sources */,
+				3F8EB2B723F2A15300AADF97 /* ImageError.swift in Sources */,
+				3F6D946A23F1947100B1FF37 /* LazyImageView.swift in Sources */,
+				3F8EB2BB23F2E03900AADF97 /* ErrorCell.swift in Sources */,
+				3F8EB2AF23F29CE400AADF97 /* Service.swift in Sources */,
+				3F8EB2B123F29D8B00AADF97 /* ImageViewModel.swift in Sources */,
+				3F6D945A23F16DA700B1FF37 /* Constants.swift in Sources */,
+				3F6D946223F18B4F00B1FF37 /* InfoModel.swift in Sources */,
+				3F6D946023F18B2400B1FF37 /* ImagoModel.swift in Sources */,
+				3F8EB2B323F29D9C00AADF97 /* ErrorViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
