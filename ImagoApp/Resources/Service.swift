@@ -42,11 +42,15 @@ class Service {
             if network{
                 let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
                     print(response!)
-                    
                     do{
+                        if let receivedData = data {
+                            let returnData: String = String(decoding: receivedData, as: UTF8.self)
+                            self.parseJSONString(data: returnData)
+                        } else {
+                            self.delegate?.handleImageError(imageError: ImageError.ServerCallFailure)
+                        }
                         
                     }
-                    
                 })
                 task.resume()
             }
@@ -66,22 +70,6 @@ class Service {
             
         }
         
-        
-        
-        
-        //        do {
-        //            let network = try Utils.shared.isNetworkAvailable()
-        //            if network {
-        //                Alamofire.request(Constants.serviceURLString).responseString(completionHandler: { (response) in
-        //                    if let dataString = response.value {
-        //                        self.parseJSONString(data: dataString)
-        //                    } else {
-        //                        print(response.error?.localizedDescription ?? AboutError.ServerCallFailure)
-        //                        self.delegate?.handleAboutError(aboutError: AboutError.ServerCallFailure)
-        //                    }
-        //                })
-        //            }
-        //        }
     }
     
     

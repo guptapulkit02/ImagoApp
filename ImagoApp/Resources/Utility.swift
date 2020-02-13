@@ -18,6 +18,8 @@ class Utils {
     
     // MARK:- Private
     
+    private let iPadDevice: Bool = UIDevice.current.userInterfaceIdiom == .pad
+    
     private init() {}
     
     // MARK:- Public
@@ -30,6 +32,14 @@ class Utils {
         } else {
             throw ImageError.NoNetwork
         }
+    }
+    
+    public func getImageCellSize() -> CGSize {
+        
+        var size = CGSize()
+        size.width = ((UIApplication.shared.keyWindow?.safeAreaLayoutGuide.layoutFrame.size.width)! - (Constants.imageImageSize + Constants.imageInsets + 20))
+        size.height = Constants.imageHeight
+        return size
     }
     
     public func parseData(data: String) throws -> ImagoData {
@@ -46,7 +56,20 @@ class Utils {
             throw ImageError.InvalidJSON
         }
     }
+
+    public func isPortrait() -> Bool { // Checking manually since UIDevice.current.orientation.isPortrait don't work properly on device launch
+        
+        if UIScreen.main.bounds.size.height > UIScreen.main.bounds.size.width {
+            return true
+        }
+        return false
+    }
     
-    
+    public func getNavBarHidden() -> Bool {
+        
+        if self.iPadDevice { return false }
+        else if self.isPortrait() { return false }
+        else { return true }
+    }
     
 }

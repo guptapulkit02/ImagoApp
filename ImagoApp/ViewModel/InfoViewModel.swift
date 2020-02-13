@@ -41,7 +41,7 @@ struct InfoViewModel {
     // Calculating Probable Height for Description text for given Card width
     
     func getDescriptionHeight(withWidth: CGFloat) -> CGFloat {
-        
+
         let approxwidth = withWidth
         let size = CGSize(width: approxwidth, height: 1000)
         let estimatedFrame = NSString(string: self.description).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: Constants.imageDescriptionFont], context: nil)

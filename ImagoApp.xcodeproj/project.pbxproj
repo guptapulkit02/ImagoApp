@@ -7,15 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F0B4DF623F3D87D006FE05E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0B4DF523F3D87D006FE05E /* Extensions.swift */; };
+		3F0B4DF823F50CF3006FE05E /* ImageViewControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0B4DF723F50CF3006FE05E /* ImageViewControllerTableViewController.swift */; };
+		3F0B4E0E23F5392B006FE05E /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0B4E0D23F5392B006FE05E /* ModelTests.swift */; };
+		3F0B4E1723F539AE006FE05E /* ServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0B4E1623F539AE006FE05E /* ServiceTests.swift */; };
+		3F0B4E1923F539BF006FE05E /* UtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0B4E1823F539BF006FE05E /* UtilsTests.swift */; };
 		3F6D945A23F16DA700B1FF37 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D945923F16DA700B1FF37 /* Constants.swift */; };
-		3F6D945C23F170F900B1FF37 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F6D945B23F170F900B1FF37 /* Default-568h@2x.png */; };
 		3F6D946023F18B2400B1FF37 /* ImagoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D945F23F18B2400B1FF37 /* ImagoModel.swift */; };
 		3F6D946223F18B4F00B1FF37 /* InfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D946123F18B4F00B1FF37 /* InfoModel.swift */; };
 		3F6D946423F18EBE00B1FF37 /* ImagoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D946323F18EBE00B1FF37 /* ImagoTableViewCell.swift */; };
 		3F6D946A23F1947100B1FF37 /* LazyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D946923F1947100B1FF37 /* LazyImageView.swift */; };
 		3F8539DC23F15C2B00DC8939 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8539DB23F15C2B00DC8939 /* AppDelegate.swift */; };
 		3F8539DE23F15C2B00DC8939 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8539DD23F15C2B00DC8939 /* SceneDelegate.swift */; };
-		3F8539E023F15C2B00DC8939 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8539DF23F15C2B00DC8939 /* ImageViewController.swift */; };
 		3F8539E523F15C2D00DC8939 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F8539E423F15C2D00DC8939 /* Assets.xcassets */; };
 		3F8539E823F15C2D00DC8939 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F8539E623F15C2D00DC8939 /* LaunchScreen.storyboard */; };
 		3F8EB2AF23F29CE400AADF97 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8EB2AE23F29CE400AADF97 /* Service.swift */; };
@@ -28,9 +31,25 @@
 		41F63369B65BC5F515E281A9 /* Pods_ImagoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A151786FB429D72DE8AE48F6 /* Pods_ImagoApp.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3F0B4E1023F5392B006FE05E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F8539D023F15C2B00DC8939 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F8539D723F15C2B00DC8939;
+			remoteInfo = ImagoApp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		3F0B4DF523F3D87D006FE05E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		3F0B4DF723F50CF3006FE05E /* ImageViewControllerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewControllerTableViewController.swift; sourceTree = "<group>"; };
+		3F0B4E0B23F5392B006FE05E /* ImagoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImagoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F0B4E0D23F5392B006FE05E /* ModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; };
+		3F0B4E0F23F5392B006FE05E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F0B4E1623F539AE006FE05E /* ServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTests.swift; sourceTree = "<group>"; };
+		3F0B4E1823F539BF006FE05E /* UtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsTests.swift; sourceTree = "<group>"; };
 		3F6D945923F16DA700B1FF37 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		3F6D945B23F170F900B1FF37 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3F6D945F23F18B2400B1FF37 /* ImagoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagoModel.swift; sourceTree = "<group>"; };
 		3F6D946123F18B4F00B1FF37 /* InfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModel.swift; sourceTree = "<group>"; };
 		3F6D946323F18EBE00B1FF37 /* ImagoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagoTableViewCell.swift; sourceTree = "<group>"; };
@@ -38,7 +57,6 @@
 		3F8539D823F15C2B00DC8939 /* ImagoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImagoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F8539DB23F15C2B00DC8939 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F8539DD23F15C2B00DC8939 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3F8539DF23F15C2B00DC8939 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		3F8539E423F15C2D00DC8939 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F8539E723F15C2D00DC8939 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F8539E923F15C2D00DC8939 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,6 +73,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3F0B4E0823F5392B006FE05E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3F8539D523F15C2B00DC8939 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -66,6 +91,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F0B4E0C23F5392B006FE05E /* ImagoAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				3F0B4E1523F53937006FE05E /* Cases */,
+				3F0B4E0F23F5392B006FE05E /* Info.plist */,
+			);
+			path = ImagoAppTests;
+			sourceTree = "<group>";
+		};
+		3F0B4E1523F53937006FE05E /* Cases */ = {
+			isa = PBXGroup;
+			children = (
+				3F0B4E0D23F5392B006FE05E /* ModelTests.swift */,
+				3F0B4E1623F539AE006FE05E /* ServiceTests.swift */,
+				3F0B4E1823F539BF006FE05E /* UtilsTests.swift */,
+			);
+			path = Cases;
+			sourceTree = "<group>";
+		};
 		3F6D945123F1657E00B1FF37 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,7 +144,7 @@
 			children = (
 				3F8539DB23F15C2B00DC8939 /* AppDelegate.swift */,
 				3F8539DD23F15C2B00DC8939 /* SceneDelegate.swift */,
-				3F8539DF23F15C2B00DC8939 /* ImageViewController.swift */,
+				3F0B4DF723F50CF3006FE05E /* ImageViewControllerTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -114,6 +158,7 @@
 				3F8EB2AE23F29CE400AADF97 /* Service.swift */,
 				3F8EB2B623F2A15300AADF97 /* ImageError.swift */,
 				3F8EB2B823F2A51D00AADF97 /* Utility.swift */,
+				3F0B4DF523F3D87D006FE05E /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -121,8 +166,8 @@
 		3F8539CF23F15C2B00DC8939 = {
 			isa = PBXGroup;
 			children = (
-				3F6D945B23F170F900B1FF37 /* Default-568h@2x.png */,
 				3F8539DA23F15C2B00DC8939 /* ImagoApp */,
+				3F0B4E0C23F5392B006FE05E /* ImagoAppTests */,
 				3F8539D923F15C2B00DC8939 /* Products */,
 				8D30AC5CE8A80740F45E8A3E /* Pods */,
 				A39130C0C1609D9B2815D8A5 /* Frameworks */,
@@ -133,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				3F8539D823F15C2B00DC8939 /* ImagoApp.app */,
+				3F0B4E0B23F5392B006FE05E /* ImagoAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -170,6 +216,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3F0B4E0A23F5392B006FE05E /* ImagoAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F0B4E1223F5392B006FE05E /* Build configuration list for PBXNativeTarget "ImagoAppTests" */;
+			buildPhases = (
+				3F0B4E0723F5392B006FE05E /* Sources */,
+				3F0B4E0823F5392B006FE05E /* Frameworks */,
+				3F0B4E0923F5392B006FE05E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3F0B4E1123F5392B006FE05E /* PBXTargetDependency */,
+			);
+			name = ImagoAppTests;
+			productName = ImagoAppTests;
+			productReference = 3F0B4E0B23F5392B006FE05E /* ImagoAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		3F8539D723F15C2B00DC8939 /* ImagoApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3F8539EC23F15C2D00DC8939 /* Build configuration list for PBXNativeTarget "ImagoApp" */;
@@ -199,6 +263,10 @@
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = Wayout;
 				TargetAttributes = {
+					3F0B4E0A23F5392B006FE05E = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 3F8539D723F15C2B00DC8939;
+					};
 					3F8539D723F15C2B00DC8939 = {
 						CreatedOnToolsVersion = 11.0;
 					};
@@ -218,18 +286,25 @@
 			projectRoot = "";
 			targets = (
 				3F8539D723F15C2B00DC8939 /* ImagoApp */,
+				3F0B4E0A23F5392B006FE05E /* ImagoAppTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3F0B4E0923F5392B006FE05E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3F8539D623F15C2B00DC8939 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3F8539E823F15C2D00DC8939 /* LaunchScreen.storyboard in Resources */,
 				3F8539E523F15C2D00DC8939 /* Assets.xcassets in Resources */,
-				3F6D945C23F170F900B1FF37 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,12 +353,22 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3F0B4E0723F5392B006FE05E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F0B4E0E23F5392B006FE05E /* ModelTests.swift in Sources */,
+				3F0B4E1723F539AE006FE05E /* ServiceTests.swift in Sources */,
+				3F0B4E1923F539BF006FE05E /* UtilsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3F8539D423F15C2B00DC8939 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F0B4DF823F50CF3006FE05E /* ImageViewControllerTableViewController.swift in Sources */,
 				3F8EB2B923F2A51D00AADF97 /* Utility.swift in Sources */,
-				3F8539E023F15C2B00DC8939 /* ImageViewController.swift in Sources */,
 				3F8539DC23F15C2B00DC8939 /* AppDelegate.swift in Sources */,
 				3F8EB2B523F29DEB00AADF97 /* InfoViewModel.swift in Sources */,
 				3F8539DE23F15C2B00DC8939 /* SceneDelegate.swift in Sources */,
@@ -293,6 +378,7 @@
 				3F8EB2BB23F2E03900AADF97 /* ErrorCell.swift in Sources */,
 				3F8EB2AF23F29CE400AADF97 /* Service.swift in Sources */,
 				3F8EB2B123F29D8B00AADF97 /* ImageViewModel.swift in Sources */,
+				3F0B4DF623F3D87D006FE05E /* Extensions.swift in Sources */,
 				3F6D945A23F16DA700B1FF37 /* Constants.swift in Sources */,
 				3F6D946223F18B4F00B1FF37 /* InfoModel.swift in Sources */,
 				3F6D946023F18B2400B1FF37 /* ImagoModel.swift in Sources */,
@@ -301,6 +387,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3F0B4E1123F5392B006FE05E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3F8539D723F15C2B00DC8939 /* ImagoApp */;
+			targetProxy = 3F0B4E1023F5392B006FE05E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3F8539E623F15C2D00DC8939 /* LaunchScreen.storyboard */ = {
@@ -314,6 +408,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3F0B4E1323F5392B006FE05E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NZS88LGRK8;
+				INFOPLIST_FILE = ImagoAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Wayout.ImagoAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImagoApp.app/ImagoApp";
+			};
+			name = Debug;
+		};
+		3F0B4E1423F5392B006FE05E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NZS88LGRK8;
+				INFOPLIST_FILE = ImagoAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Wayout.ImagoAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImagoApp.app/ImagoApp";
+			};
+			name = Release;
+		};
 		3F8539EA23F15C2D00DC8939 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -436,6 +570,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NZS88LGRK8;
 				INFOPLIST_FILE = ImagoApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -455,6 +590,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NZS88LGRK8;
 				INFOPLIST_FILE = ImagoApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -469,6 +605,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3F0B4E1223F5392B006FE05E /* Build configuration list for PBXNativeTarget "ImagoAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F0B4E1323F5392B006FE05E /* Debug */,
+				3F0B4E1423F5392B006FE05E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3F8539D323F15C2B00DC8939 /* Build configuration list for PBXProject "ImagoApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
