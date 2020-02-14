@@ -64,14 +64,19 @@ class ImageViewControllerTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        let cellSize = Utils.shared.getImageCellSize()
-        let descHeight = (self.imageInfo?.rows[indexPath.row].getDescriptionHeight(withWidth: cellSize.width))! + 46
         let heightFinal : CGFloat
-        if descHeight > cellSize.height {
-             heightFinal = (descHeight - cellSize.height) + cellSize.height
+        let cellSize = Utils.shared.getImageCellSize()
+        if self.imageError == nil {
+            
+            let descHeight = (self.imageInfo?.rows[indexPath.row].getDescriptionHeight(withWidth: cellSize.width))! + 46
+            if descHeight > cellSize.height {
+                 heightFinal = (descHeight - cellSize.height) + cellSize.height
+            } else {
+                heightFinal = cellSize.height
+            }
+            
         } else {
-            heightFinal = cellSize.height
+            heightFinal = self.tableView!.frame.width     //Making error cell full screen size
         }
         return heightFinal
     }
@@ -82,7 +87,7 @@ class ImageViewControllerTableViewController: UITableViewController {
         self.tableView?.backgroundColor = Constants.imagoBackgroundColor
         self.setupNavBar()
         self.tableView?.register(ImagoTableViewCell.self, forCellReuseIdentifier: Constants.imageInfoCellIdentifier)
-        
+        self.tableView?.register(ErrorCell.self, forCellReuseIdentifier: Constants.errorCellIdentifier)
         self.refresher = self.getRefreshControl()
         self.tableView.refreshControl = self.refresher
         
