@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 
-// MARK:- UIView Extensions
+// MARK: UIView Extensions
 
 extension UIView {
     
-    // MARK:- Public
+    // MARK: Public
     
     /// Description:- anchor function is used to set the constraints for the view for which this function is called. (Mainly UIView)
     /// - Parameter top: sets the top constraint view

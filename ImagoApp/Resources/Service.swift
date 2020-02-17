@@ -9,32 +9,29 @@
 import Foundation
 import UIKit
 
-// MARK:- Protocol: ImageServiceDelegate
+// MARK: Protocol: ImageServiceDelegate
 
 protocol ImageServiceDelegate: class {
     
     /// Description:- Delegate Function that is triggered when the response received from the API is valid and successfully parsed.
     /// - Parameter imageResponse: The parameter passes the response as a callback to the delegate and can be fetched by the calss implementing this delegate.
-    func handleImageData(imageResponse: ImageViewModel) -> Void
+    func handleImageData(imageResponse: ImageViewModel)
     
     /// Description:- Delegate Function that is triggered when the response received from the API is not valid and not successfully parsed or there is some network error.
     /// - Parameter imageResponse: The parameter passes the error as a callback to the delegate and can be fetched by the class implementing this delegate.
-    func handleImageError(imageError: ImageError) -> Void
+    func handleImageError(imageError: ImageError)
     
 }
 
-
-// MARK:- Service
+// MARK: Service
 
 class Service {
     
     // Shared Instance
     static let shared = Service()
-    
     weak var delegate: ImageServiceDelegate?
     
-    
-    // MARK:- Public: getImageData
+    // MARK: Public: getImageData
     
     /// Description:- It gets the response from the URL that we call to get the description, Title and Image URl from the server using a URLSession.
     public func getImageData() {
@@ -47,38 +44,36 @@ class Service {
             var request = URLRequest(url: url)
             request.httpMethod = "GET"
             
-            if network{
-                let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
-                    do{
+            if network {
+                let task = session.dataTask(with: request, completionHandler: { data, _, _ -> Void in
+                    do {
                         if let receivedData = data {
                             let returnData: String = String(decoding: receivedData, as: UTF8.self)
                             self.parseJSONString(data: returnData)
                         } else {
-                            self.delegate?.handleImageError(imageError: ImageError.ServerCallFailure)
+                            self.delegate?.handleImageError(imageError: ImageError.serverCallFailure)
                         }
-                        
                     }
                 })
                 task.resume()
             }
             
-        } catch ImageError.NoNetwork{
+        } catch ImageError.noNetwork {
             
-            self.delegate?.handleImageError(imageError: ImageError.NoNetwork)
+            self.delegate?.handleImageError(imageError: ImageError.noNetwork)
             
-        } catch ImageError.InvalidJSON {
+        } catch ImageError.invalidJSON {
             
-            self.delegate?.handleImageError(imageError: ImageError.InvalidJSON)
+            self.delegate?.handleImageError(imageError: ImageError.invalidJSON)
             
         } catch {
-            self.delegate?.handleImageError(imageError: ImageError.ServerCallFailure)
+            self.delegate?.handleImageError(imageError: ImageError.serverCallFailure)
             
         }
         
     }
     
-    
-    // MARK:- Private:
+    // MARK: Private:
     
     private init() {}
     
@@ -90,7 +85,7 @@ class Service {
             let imageViewModel = ImageViewModel(imagoInfo: imageData)
             self.delegate?.handleImageData(imageResponse: imageViewModel)
         } catch {
-            self.delegate?.handleImageError(imageError: ImageError.InvalidJSON)
+            self.delegate?.handleImageError(imageError: ImageError.invalidJSON)
         }
     }
 }

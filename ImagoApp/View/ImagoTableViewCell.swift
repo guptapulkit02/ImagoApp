@@ -10,7 +10,6 @@ import UIKit
 
 class ImagoTableViewCell: UITableViewCell {
     
-    
     var imageInfo: InfoViewModel! {
         didSet {
             DispatchQueue.main.async {
@@ -65,8 +64,6 @@ class ImagoTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    
-    
     /// Description:- it is used to setup the tableViewCell view . 
     private func setupCellView() {
         
@@ -88,6 +85,5 @@ class ImagoTableViewCell: UITableViewCell {
             cellImage.loadImageUsingURLString(urlString: imageInfo.imageURL)
         }
     }
-    
     
 }

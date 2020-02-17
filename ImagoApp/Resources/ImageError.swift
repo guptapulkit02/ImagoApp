@@ -8,12 +8,11 @@
 
 import Foundation
 
-
-// MARK:- ImageError
+// MARK: ImageError
 
 enum ImageError: Error {
     
-    case NoNetwork
-    case InvalidJSON
-    case ServerCallFailure
+    case noNetwork
+    case invalidJSON
+    case serverCallFailure
 }

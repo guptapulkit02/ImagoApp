@@ -9,20 +9,19 @@
 import Foundation
 import UIKit
 
-// MARK:- ErrorViewModel
+// MARK: ErrorViewModel
 
 struct ErrorViewModel {
-    
-    
-    // MARK:- Public
-    
+
+    // MARK: Public
+
     let errorImage: UIImageView = {
         let imageView = UIImageView(image: Constants.errorImage)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = UIView.ContentMode.scaleAspectFit
         return imageView
     }()
-    
+
     let errorMessage: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -31,12 +30,12 @@ struct ErrorViewModel {
         label.numberOfLines = 0
         return label
     }()
-    
+
     // Dependancy Injection (DI)
     init(error: ImageError) {
-        
+
         switch error {
-        case ImageError.NoNetwork:
+        case ImageError.noNetwork:
             errorMessage.text = Constants.noConnectivityMessage
         default:
             errorMessage.text = Constants.errorMessage

@@ -9,14 +9,13 @@
 import Foundation
 import UIKit
 
-
-// MARK:- ImagoData
+// MARK: ImagoData
 
 // Making ImagoData Model Decodable so that JSON decoder can directly map service response accordingly
 
 struct ImagoData: Decodable {
     
-    let title : String?
+    let title: String?
     let rows: [ImageInfo]?
 
 }

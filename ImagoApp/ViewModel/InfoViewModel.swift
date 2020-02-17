@@ -9,13 +9,11 @@
 import Foundation
 import UIKit
 
-
-// MARK:- InfoViewModel
+// MARK: InfoViewModel
 
 struct InfoViewModel {
     
-    
-    // MARK:- Public
+    // MARK: Public
     
     var title: String
     var imageURL: String

@@ -11,9 +11,7 @@ import SnapKit
 
 class ErrorCell: UITableViewCell {
 
-    
-    
-    // MARK:- Internal
+    // MARK: Internal
     
     var aboutError: ErrorViewModel? {
         didSet {
@@ -32,8 +30,7 @@ class ErrorCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-    // MARK:- Private: setupCellView
+    // MARK: Private: setupCellView
     
     /// Description:- It is used to setup the tableView Error Cell. That shows the error Image and Error Message at the time of non 200 Status or Network issue.
     private func setupCellView() {

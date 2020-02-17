@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-// MARK:- ImageInfo
+// MARK: ImageInfo
 
 // Making ImageInfo Model Decodable so that JSON decoder can directly map service response accordingly.
 

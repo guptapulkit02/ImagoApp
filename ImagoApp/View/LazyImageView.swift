@@ -11,11 +11,9 @@ import UIKit
 // Image Cache to limit unnecessory Network calls
 let imageCache = NSCache<AnyObject, AnyObject>()
 
-
-// MARK:- LazyImageView
+// MARK: LazyImageView
 
 class LazyImageView: UIImageView {
-    
     
     // MARK: Private
     
@@ -50,10 +48,10 @@ class LazyImageView: UIImageView {
                     return
                 }
                 if response != nil {
-                    let httpResponse = response as! HTTPURLResponse
+                    let httpResponse = response as? HTTPURLResponse
                     
                     // Checking for Success Response
-                    if data != nil && httpResponse.statusCode == 200 {
+                    if data != nil && httpResponse!.statusCode == 200 {
                         let imageToCache = UIImage(data: data!)
                         
                         // Checking if current Image URL is same as Holding URL

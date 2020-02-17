@@ -10,18 +10,18 @@ import UIKit
 
 class ImageViewControllerTableViewController: UITableViewController {
     
-    // MARK:- Public
+    // MARK: Public
     
     var navigationTitle: UILabel?
     var navBarView: UIView?
     
-    // MARK:- Private
+    // MARK: Private
     
     private var refresher: UIRefreshControl!
     private var imageError: ImageError?
     private var imageInfo: ImageViewModel?
     
-    // MARK:- Internal Inheritance UIView
+    // MARK: Internal Inheritance UIView
     
     /// Description:- It loads the View initially before the view is going to appear on the window.
     override func viewDidLoad() {
@@ -40,34 +40,35 @@ class ImageViewControllerTableViewController: UITableViewController {
         coordinator.animate(alongsideTransition: { (_) in
             // Hiding navigation bar in case of iPhone device is in Lanscape mode
             self.navBarView?.isHidden = Utils.shared.getNavBarHidden()
-        }) { (_) in }
+        })
         
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if imageError != nil {
-            let errorcell = tableView.dequeueReusableCell(withIdentifier: Constants.errorCellIdentifier, for: indexPath) as! ErrorCell
+            let errorcell = tableView.dequeueReusableCell(withIdentifier: Constants.errorCellIdentifier, for: indexPath) as? ErrorCell
             let errorViewModel = ErrorViewModel(error: imageError!)
-            errorcell.aboutError = errorViewModel
-            return errorcell
+            errorcell!.aboutError = errorViewModel
+            return errorcell!
         } else {
-            let imageCell = tableView.dequeueReusableCell(withIdentifier: Constants.imageInfoCellIdentifier, for: indexPath) as! ImagoTableViewCell
-            imageCell.imageInfo = imageInfo?.rows[indexPath.row]
-            return imageCell
+            let imageCell = tableView.dequeueReusableCell(withIdentifier: Constants.imageInfoCellIdentifier, for: indexPath) as? ImagoTableViewCell
+            imageCell!.imageInfo = imageInfo?.rows[indexPath.row]
+            return imageCell!
         }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //code here
-        if imageError != nil {return 1}
-        else {
+        if imageError != nil {
+            return 1
+        } else {
             return imageInfo?.rows.count ?? 0
         }
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let heightFinal : CGFloat
+        let heightFinal: CGFloat
         let cellSize = Utils.shared.getImageCellSize()
         if imageError == nil {
             
@@ -84,9 +85,8 @@ class ImageViewControllerTableViewController: UITableViewController {
         return heightFinal
     }
     
-    
     /// Description:- It sets the View initially.
-    private func setupView(){
+    private func setupView() {
         
         tableView?.backgroundColor = Constants.imagoBackgroundColor
         setupNavBar()
@@ -98,7 +98,7 @@ class ImageViewControllerTableViewController: UITableViewController {
     }
     
     /// Description:- It setups the Nav bar to support the view with the title
-    private func setupNavBar(){
+    private func setupNavBar() {
         
         navigationController?.navigationBar.tintColor = .white
         navBarView?.isHidden = Utils.shared.getNavBarHidden()
@@ -120,9 +120,9 @@ class ImageViewControllerTableViewController: UITableViewController {
     /// Description:- it adds the refresh target to the view
     private func getRefreshControl() -> UIRefreshControl {
         
-        let rc = UIRefreshControl()
-        rc.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
-        return rc
+        let rControl = UIRefreshControl()
+        rControl.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+        return rControl
     }
     
     /// Description :- It specifies what type of functionality the refresh will execute . here it will fetch the data again from the API service
@@ -141,7 +141,7 @@ class ImageViewControllerTableViewController: UITableViewController {
     
 }
 
-// MARK:- AboutServiceDeligate
+// MARK: AboutServiceDeligate
 
 extension ImageViewControllerTableViewController: ImageServiceDelegate {
     

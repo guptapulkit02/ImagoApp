@@ -243,6 +243,7 @@
 				3F8539D523F15C2B00DC8939 /* Frameworks */,
 				3F8539D623F15C2B00DC8939 /* Resources */,
 				F658B677BA5B0728A8B6D381 /* [CP] Embed Pods Frameworks */,
+				3F0B4E1A23FA95A3006FE05E /* SwiftLint Run script */,
 			);
 			buildRules = (
 			);
@@ -311,6 +312,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3F0B4E1A23FA95A3006FE05E /* SwiftLint Run script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint Run script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 		71602519437AE5F34B3E9FBE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -348,7 +367,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ImagoApp/Pods-ImagoApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 

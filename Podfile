@@ -9,6 +9,7 @@ target 'ImagoApp' do
 
 pod 'SnapKit', '~> 5.0.1'
 pod 'Alamofire'
+pod 'SwiftLint'
 
 
 end

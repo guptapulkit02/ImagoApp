@@ -10,21 +10,20 @@ import Foundation
 import UIKit
 import Alamofire
 
-// MARK:- Utils
+// MARK: Utils
 
 class Utils {
     
     public static let shared = Utils()
     
-    // MARK:- Private
+    // MARK: Private
     
     private let iPadDevice: Bool = UIDevice.current.userInterfaceIdiom == .pad
-    
     
     /// Description:- Any initial value that need to be passed to this class can be done using this constructor.
     private init() {}
     
-    // MARK:- Public
+    // MARK: Public
     
     /// Description:- it checks for the network availability using the NetworkReachibilityManager() class of Alamofire Pod.
     public func isNetworkAvailable() throws -> Bool {
@@ -33,7 +32,7 @@ class Utils {
         if (reachability?.isReachable)! {
             return true
         } else {
-            throw ImageError.NoNetwork
+            throw ImageError.noNetwork
         }
     }
     
@@ -58,7 +57,7 @@ class Utils {
             let imageData: ImagoData = try JSONDecoder().decode(ImagoData.self, from: data!)
             return imageData
         } catch {
-            throw ImageError.InvalidJSON
+            throw ImageError.invalidJSON
         }
     }
     
@@ -74,9 +73,13 @@ class Utils {
     /// Description:- It is a func that returns the bool value which tells whether er need to hide or show the navBar. 
     public func getNavBarHidden() -> Bool {
         
-        if self.iPadDevice { return false }
-        else if self.isPortrait() { return false }
-        else { return true }
+        if self.iPadDevice {
+            return false
+        } else if self.isPortrait() {
+            return false
+        } else {
+            return true
+        }
     }
     
 }

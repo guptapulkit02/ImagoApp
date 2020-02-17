@@ -9,8 +9,7 @@
 import Foundation
 import UIKit
 
-
-// MARK:- ImageViewModel
+// MARK: ImageViewModel
 
 struct ImageViewModel {
     
@@ -23,7 +22,7 @@ struct ImageViewModel {
         
         if !(imagoInfo.rows?.isEmpty)! {
             for imageData in (imagoInfo.rows)! {
-                guard let _ = imageData.title else { continue } // Ignoring images without Title
+                guard imageData.title != nil else { continue } // Ignoring images without Title
                 let imageViewModel = InfoViewModel(info: imageData)
                 imagesArray.append(imageViewModel)
             }
@@ -31,5 +30,4 @@ struct ImageViewModel {
         title = imagoInfo.title ?? ""
         rows = imagesArray
     }
-    
 }

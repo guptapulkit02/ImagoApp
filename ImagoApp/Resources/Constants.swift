@@ -9,13 +9,11 @@
 import Foundation
 import UIKit
 
-
-// MARK :- Constants
-
+// MARK: Constants
 
 struct Constants {
     
-    // MARK:- Public: Static
+    // MARK: Public: Static
     
     static let navBarTitle = "Imago"
     static let noConnectivityMessage = "No Internet. Check your data/wifi settings and try again."
@@ -44,7 +42,7 @@ struct Constants {
     static let imageDescriptionLines = 0
     static let imageImageSize = CGFloat(100)
     
-    // MARK:- Private
+    // MARK: Private
     
     private init() {}
     

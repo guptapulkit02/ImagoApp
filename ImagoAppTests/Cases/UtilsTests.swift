@@ -8,38 +8,32 @@
 
 import XCTest
 
-
 @testable import ImagoApp
 
 class UtilsTests: XCTestCase {
 
     func testNetwork() {
-        
         do {
             let result = try Utils.shared.isNetworkAvailable()
             XCTAssertEqual(result, true, "No Internet")
         } catch {
-            XCTFail()
+            XCTFail("Failed")
         }
     }
-    
     func testInvalidJSONParsing() {
-        
         do {
             _ = try Utils.shared.parseData(data: "{\"title\", \"About Canada\", \"rows\", []}")
-            XCTFail()
+            XCTFail("Failed")
         } catch {
-            XCTAssertEqual(error as! ImageError, ImageError.InvalidJSON)
+            XCTAssertEqual(error as? ImageError, ImageError.invalidJSON)
         }
     }
-    
     func testParsingJSONString() {
-        
         do {
             let result = try Utils.shared.parseData(data: "{\"title\": \"About Canada\", \"rows\": []}")
             XCTAssertEqual(result.title, "About Canada")
         } catch {
-            XCTFail()
+            XCTFail("Failed")
         }
     }
 
