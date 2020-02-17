@@ -25,26 +25,28 @@ struct InfoViewModel {
     
     init(info: ImageInfo) {
         
-        self.title = info.title!
+        title = info.title!
         if let dscr = info.description {
-            self.description = dscr
+            description = dscr
         } else {
-            self.description = ""
+            description = ""
         }
         if let url = info.imageHref {
-            self.imageURL = url
+            imageURL = url
         } else {
-            self.imageURL = "http://"
+            imageURL = "http://"
         }
     }
     
     // Calculating Probable Height for Description text for given Card width
     
+    /// - getDescriptionHeight(withWidth: CGFloat)->CGFloat - returns the height of the label it will occupy inside the cell.
+    /// - Parameter withWidth: it is the width of the label that will contain the description
     func getDescriptionHeight(withWidth: CGFloat) -> CGFloat {
 
         let approxwidth = withWidth
         let size = CGSize(width: approxwidth, height: 1000)
-        let estimatedFrame = NSString(string: self.description).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: Constants.imageDescriptionFont], context: nil)
+        let estimatedFrame = NSString(string: description).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: Constants.imageDescriptionFont], context: nil)
         return estimatedFrame.height
     }
 }

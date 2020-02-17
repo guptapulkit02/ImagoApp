@@ -60,21 +60,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK:- Private: setupRootViewController
     
+    /// Description:- It sets the rootViewController for the initialised UIWindow.
     private func setupRootViewController() {
         
-        self.window = UIWindow(frame: UIScreen.main.bounds)
+        window = UIWindow(frame: UIScreen.main.bounds)
                 
         UINavigationBar.appearance().tintColor = Constants.navigationBarColor
         let statusBarView = UIView()
         statusBarView.backgroundColor = Constants.statusBarColor
         let imageController = ImageViewControllerTableViewController()
-        self.window?.rootViewController = UINavigationController(rootViewController: imageController)
-        self.window?.addSubview(statusBarView)
+        window?.rootViewController = UINavigationController(rootViewController: imageController)
+        window?.addSubview(statusBarView)
         DispatchQueue.main.async {
             statusBarView.anchor(self.window?.topAnchor, left: self.window?.leftAnchor, bottom: nil, right: self.window?.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 20)
         }
         imageController.navBarView = statusBarView
-        self.window?.makeKeyAndVisible()
+        window?.makeKeyAndVisible()
 
     }
 

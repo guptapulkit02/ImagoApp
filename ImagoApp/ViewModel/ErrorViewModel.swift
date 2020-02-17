@@ -37,9 +37,9 @@ struct ErrorViewModel {
         
         switch error {
         case ImageError.NoNetwork:
-            self.errorMessage.text = Constants.noConnectivityMessage
+            errorMessage.text = Constants.noConnectivityMessage
         default:
-            self.errorMessage.text = Constants.errorMessage
+            errorMessage.text = Constants.errorMessage
         }
     }
 }

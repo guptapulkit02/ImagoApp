@@ -28,8 +28,8 @@ struct ImageViewModel {
                 imagesArray.append(imageViewModel)
             }
         }
-        self.title = imagoInfo.title ?? ""
-        self.rows = imagesArray
+        title = imagoInfo.title ?? ""
+        rows = imagesArray
     }
     
 }

@@ -12,25 +12,28 @@ class ImageViewControllerTableViewController: UITableViewController {
     
     // MARK:- Public
     
-    var refresher: UIRefreshControl!
     var navigationTitle: UILabel?
-    var imageError: ImageError?
-    var imageInfo: ImageViewModel?
     var navBarView: UIView?
+    
+    // MARK:- Private
+    
+    private var refresher: UIRefreshControl!
+    private var imageError: ImageError?
+    private var imageInfo: ImageViewModel?
     
     // MARK:- Internal Inheritance UIView
     
+    /// Description:- It loads the View initially before the view is going to appear on the window.
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.setupView()
-        print("Setup done...")
+        setupView()
         Service.shared.delegate = self
         DispatchQueue.main.async {
             Service.shared.getImageData()
         }
     }
-    
+
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         
         super.viewWillTransition(to: size, with: coordinator)
@@ -43,32 +46,32 @@ class ImageViewControllerTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if self.imageError != nil {
+        if imageError != nil {
             let errorcell = tableView.dequeueReusableCell(withIdentifier: Constants.errorCellIdentifier, for: indexPath) as! ErrorCell
             let errorViewModel = ErrorViewModel(error: imageError!)
             errorcell.aboutError = errorViewModel
             return errorcell
         } else {
             let imageCell = tableView.dequeueReusableCell(withIdentifier: Constants.imageInfoCellIdentifier, for: indexPath) as! ImagoTableViewCell
-            imageCell.imageInfo = self.imageInfo?.rows[indexPath.row]
+            imageCell.imageInfo = imageInfo?.rows[indexPath.row]
             return imageCell
         }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //code here
-        if self.imageError != nil {return 1}
+        if imageError != nil {return 1}
         else {
-            return self.imageInfo?.rows.count ?? 0
+            return imageInfo?.rows.count ?? 0
         }
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let heightFinal : CGFloat
         let cellSize = Utils.shared.getImageCellSize()
-        if self.imageError == nil {
+        if imageError == nil {
             
-            let descHeight = (self.imageInfo?.rows[indexPath.row].getDescriptionHeight(withWidth: cellSize.width))! + 46
+            let descHeight = (imageInfo?.rows[indexPath.row].getDescriptionHeight(withWidth: cellSize.width))! + 46
             if descHeight > cellSize.height {
                  heightFinal = (descHeight - cellSize.height) + cellSize.height
             } else {
@@ -76,29 +79,31 @@ class ImageViewControllerTableViewController: UITableViewController {
             }
             
         } else {
-            heightFinal = self.tableView!.frame.width     //Making error cell full screen size
+            heightFinal = tableView.frame.width     //Making error cell full screen size
         }
         return heightFinal
     }
     
     
+    /// Description:- It sets the View initially.
     private func setupView(){
         
-        self.tableView?.backgroundColor = Constants.imagoBackgroundColor
-        self.setupNavBar()
-        self.tableView?.register(ImagoTableViewCell.self, forCellReuseIdentifier: Constants.imageInfoCellIdentifier)
-        self.tableView?.register(ErrorCell.self, forCellReuseIdentifier: Constants.errorCellIdentifier)
-        self.refresher = self.getRefreshControl()
-        self.tableView.refreshControl = self.refresher
+        tableView?.backgroundColor = Constants.imagoBackgroundColor
+        setupNavBar()
+        tableView?.register(ImagoTableViewCell.self, forCellReuseIdentifier: Constants.imageInfoCellIdentifier)
+        tableView?.register(ErrorCell.self, forCellReuseIdentifier: Constants.errorCellIdentifier)
+        refresher = getRefreshControl()
+        tableView.refreshControl = refresher
         
     }
     
+    /// Description:- It setups the Nav bar to support the view with the title
     private func setupNavBar(){
         
         navigationController?.navigationBar.tintColor = .white
-        self.navBarView?.isHidden = Utils.shared.getNavBarHidden()
-        self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationTitle = {
+        navBarView?.isHidden = Utils.shared.getNavBarHidden()
+        navigationController?.navigationBar.isTranslucent = false
+        navigationTitle = {
             let label = UILabel()
             label.text = Constants.navBarTitle
             label.textColor = UIColor.black
@@ -108,10 +113,11 @@ class ImageViewControllerTableViewController: UITableViewController {
             return label
         }()
         
-        self.navigationItem.titleView = self.navigationTitle
+        navigationItem.titleView = navigationTitle
         // Disabling Navigation to CardsView untill the data is available
     }
     
+    /// Description:- it adds the refresh target to the view
     private func getRefreshControl() -> UIRefreshControl {
         
         let rc = UIRefreshControl()
@@ -119,16 +125,18 @@ class ImageViewControllerTableViewController: UITableViewController {
         return rc
     }
     
+    /// Description :- It specifies what type of functionality the refresh will execute . here it will fetch the data again from the API service
     @objc private func handleRefresh() {
         DispatchQueue.main.async {
             Service.shared.getImageData()
         }
     }
     
+    /// Description:- It is used to clear the data that was previously fetched and shown in the table view and show the latest fetched data
     private func clearData() {
         
-        if self.refresher.isRefreshing { self.refresher.endRefreshing() }
-        self.imageInfo = nil
+        if refresher.isRefreshing { refresher.endRefreshing() }
+        imageInfo = nil
     }
     
 }
@@ -137,6 +145,8 @@ class ImageViewControllerTableViewController: UITableViewController {
 
 extension ImageViewControllerTableViewController: ImageServiceDelegate {
     
+    /// Description:- it is the delegate method that returns the reponse that we have received from the APi in form of an array of type ImageViewModel
+    /// - Parameter imageResponse: It accepts the value of type ImageViewModel.
     func handleImageData(imageResponse: ImageViewModel) {
         
         DispatchQueue.main.async {
@@ -151,11 +161,13 @@ extension ImageViewControllerTableViewController: ImageServiceDelegate {
         
     }
     
+    /// Description:- it is the delegate method that is triggered at the time of any error while retrieving the data form the API. It is also triggered at the time of network issue.
+    /// - Parameter imageError: It contains the error description that is of type ImageError
     func handleImageError(imageError: ImageError) {
         
-        self.clearData()
+        clearData()
         self.imageError = imageError
-        self.navigationItem.rightBarButtonItem?.isEnabled = false // Since data is not available disabling navigation to CardsView
-        self.tableView?.reloadData()
+        navigationItem.rightBarButtonItem?.isEnabled = false // Since data is not available disabling navigation to CardsView
+        tableView?.reloadData()
     }
 }

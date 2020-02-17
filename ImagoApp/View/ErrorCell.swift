@@ -35,6 +35,7 @@ class ErrorCell: UITableViewCell {
     
     // MARK:- Private: setupCellView
     
+    /// Description:- It is used to setup the tableView Error Cell. That shows the error Image and Error Message at the time of non 200 Status or Network issue.
     private func setupCellView() {
         
         let imageView = (aboutError?.errorImage)!

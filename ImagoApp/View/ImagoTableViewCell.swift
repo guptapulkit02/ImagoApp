@@ -67,26 +67,25 @@ class ImagoTableViewCell: UITableViewCell {
     
     
     
-    func setupCellView() {
+    /// Description:- it is used to setup the tableViewCell view . 
+    private func setupCellView() {
         
         self.backgroundColor = Constants.imageBackgroundColor
-        self.imageTitle.text = self.imageInfo.title
-        self.descriptionText.text = self.imageInfo.description
+        imageTitle.text = self.imageInfo.title
+        descriptionText.text = self.imageInfo.description
         self.addSubview(self.imageTitle)
         self.addSubview(self.cellImage)
         self.addSubview(self.descriptionText)
         
-        self.cellImage.anchor(self.topAnchor, left: self.leftAnchor, bottom: nil, right: nil, topConstant: 8, leftConstant: 8, bottomConstant: 0, rightConstant: 0, widthConstant: Constants.imageImageSize, heightConstant: Constants.imageImageSize)
+        cellImage.anchor(self.topAnchor, left: self.leftAnchor, bottom: nil, right: nil, topConstant: 8, leftConstant: 8, bottomConstant: 0, rightConstant: 0, widthConstant: Constants.imageImageSize, heightConstant: Constants.imageImageSize)
             
-        self.imageTitle.anchor(self.cellImage.topAnchor, left: self.cellImage.rightAnchor, bottom: nil, right: self.rightAnchor, topConstant: 0, leftConstant: 12, bottomConstant: 8, rightConstant: 8, widthConstant: 0, heightConstant: 20)
+        imageTitle.anchor(self.cellImage.topAnchor, left: self.cellImage.rightAnchor, bottom: nil, right: self.rightAnchor, topConstant: 0, leftConstant: 12, bottomConstant: 8, rightConstant: 8, widthConstant: 0, heightConstant: 20)
             
-        self.descriptionText.anchor(self.imageTitle.bottomAnchor, left: self.imageTitle.leftAnchor, bottom: nil, right: self.imageTitle.rightAnchor, topConstant: 8, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
-        
-        print(self.descriptionText.frame.size.height)
+        descriptionText.anchor(self.imageTitle.bottomAnchor, left: self.imageTitle.leftAnchor, bottom: nil, right: self.imageTitle.rightAnchor, topConstant: 8, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         
         // Try fetching Image if Article has URL
-        if !self.imageInfo.imageURL.isEmpty {
-            self.cellImage.loadImageUsingURLString(urlString: self.imageInfo.imageURL)
+        if !imageInfo.imageURL.isEmpty {
+            cellImage.loadImageUsingURLString(urlString: imageInfo.imageURL)
         }
     }
     

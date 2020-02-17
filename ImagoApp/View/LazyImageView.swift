@@ -17,18 +17,23 @@ let imageCache = NSCache<AnyObject, AnyObject>()
 class LazyImageView: UIImageView {
     
     
+    // MARK: Private
+    
+    private var imageURLString: String?
+    
     // MARK: Public
     
-    var imageURLString: String?
-    
+    /// Description :-  It clears the Cache memory that stores the already fetched images
     static func clearImageCache() {
         
         imageCache.removeAllObjects()
     }
     
+    /// Description : - It loads the images in the background from the URL String that is passed to this function
+    /// - Parameter urlString: It is the URL of the image that has to be downloaded to be shown in the table view
     func loadImageUsingURLString(urlString: String) {
         
-        self.imageURLString = urlString // Holding Image URL to make sure Image gets in Right Place during Async Calls
+        imageURLString = urlString // Holding Image URL to make sure Image gets in Right Place during Async Calls
         self.image = Constants.noImage // Placeholder Image till Actual Image gets loaded Successfully
         let url = URL(string: urlString)!
         
@@ -42,7 +47,6 @@ class LazyImageView: UIImageView {
         URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
             DispatchQueue.main.async {
                 if error != nil {
-                    print(error.debugDescription)
                     return
                 }
                 if response != nil {

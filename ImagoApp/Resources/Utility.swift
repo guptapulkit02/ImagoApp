@@ -20,10 +20,13 @@ class Utils {
     
     private let iPadDevice: Bool = UIDevice.current.userInterfaceIdiom == .pad
     
+    
+    /// Description:- Any initial value that need to be passed to this class can be done using this constructor.
     private init() {}
     
     // MARK:- Public
     
+    /// Description:- it checks for the network availability using the NetworkReachibilityManager() class of Alamofire Pod.
     public func isNetworkAvailable() throws -> Bool {
         
         let reachability = NetworkReachabilityManager()
@@ -34,6 +37,7 @@ class Utils {
         }
     }
     
+    /// Description:- It return the size of the cell that has to fit the image in that particular cell. (It is calculated using the image size)
     public func getImageCellSize() -> CGSize {
         
         var size = CGSize()
@@ -42,6 +46,8 @@ class Utils {
         return size
     }
     
+    /// Description:- parseData :- removes the unwanted spaces or text from the response and parses the response string into a JSON string
+    /// - Parameter data: It is the response we received from the API call in form of a String.
     public func parseData(data: String) throws -> ImagoData {
         
         // Since incoming data is not proper JSON need to remove \n & \t from the response
@@ -52,11 +58,11 @@ class Utils {
             let imageData: ImagoData = try JSONDecoder().decode(ImagoData.self, from: data!)
             return imageData
         } catch {
-            print(error)
             throw ImageError.InvalidJSON
         }
     }
-
+    
+    /// Description:- It checks if the orientation of the device is portrait or not and if it is then what needs to be done in that case.
     public func isPortrait() -> Bool { // Checking manually since UIDevice.current.orientation.isPortrait don't work properly on device launch
         
         if UIScreen.main.bounds.size.height > UIScreen.main.bounds.size.width {
@@ -65,6 +71,7 @@ class Utils {
         return false
     }
     
+    /// Description:- It is a func that returns the bool value which tells whether er need to hide or show the navBar. 
     public func getNavBarHidden() -> Bool {
         
         if self.iPadDevice { return false }

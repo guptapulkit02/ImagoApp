@@ -23,23 +23,23 @@ class ServiceTests: XCTestCase {
     func testServiceData() {
         
         Service.shared.delegate = (self as! ImageServiceDelegate)
-        self.serviceDataExpectation = expectation(description: "Response")
+        serviceDataExpectation = expectation(description: "Response")
         
         Service.shared.getImageData()
         
-        wait(for: [self.serviceDataExpectation], timeout: 60)
+        wait(for: [serviceDataExpectation], timeout: 60)
         XCTAssertNotNil(response, "Invalid Service Response")
     }
     
     func handleImageData(imageResponse: ImagoData) {
         
-        self.response = imageResponse
-        self.serviceDataExpectation.fulfill()
+        response = imageResponse
+        serviceDataExpectation.fulfill()
     }
     
     func handleImageError(imageError: ImageError) {
         
-        self.serviceDataExpectation.fulfill()
+        serviceDataExpectation.fulfill()
     }
 
 }
