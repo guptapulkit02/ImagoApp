@@ -45,13 +45,13 @@ class Service {
             request.httpMethod = "GET"
             
             if network {
-                let task = session.dataTask(with: request, completionHandler: { data, _, _ -> Void in
+                let task = session.dataTask(with: request, completionHandler: { [weak self] data, _, _ -> Void in
                     do {
                         if let receivedData = data {
                             let returnData: String = String(decoding: receivedData, as: UTF8.self)
-                            self.parseJSONString(data: returnData)
+                            self!.parseJSONString(data: returnData)
                         } else {
-                            self.delegate?.handleImageError(imageError: ImageError.serverCallFailure)
+                            self!.delegate?.handleImageError(imageError: ImageError.serverCallFailure)
                         }
                     }
                 })
@@ -77,7 +77,8 @@ class Service {
     
     private init() {}
     
-    /// Description:- parseJSONString :- It is used to parse the string that we received as response from the API call and convert it into a JSON which can be easily utilised to get the description , title and image URL
+    /// Description:- parseJSONString :- It is used to parse the string that we received as response
+    ///                         from the API call and convert it into a JSON which can be easily utilised to get the description , title and image URL
     /// - Parameter data: a response received from the API call in the form of a string. 
     private func parseJSONString(data: String) {
         do {

@@ -42,7 +42,7 @@ class LazyImageView: UIImageView {
         }
         
         // Since Image is not Available in Cache, fetching it from URL
-        URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+        URLSession.shared.dataTask(with: url, completionHandler: { [weak self] (data, response, error) in
             DispatchQueue.main.async {
                 if error != nil {
                     return
@@ -55,9 +55,9 @@ class LazyImageView: UIImageView {
                         let imageToCache = UIImage(data: data!)
                         
                         // Checking if current Image URL is same as Holding URL
-                        if self.imageURLString == urlString && imageToCache != nil {
-                            self.image = UIImage(data: data!)
-                            imageCache.setObject(imageToCache as AnyObject, forKey: self.imageURLString as AnyObject)
+                        if self!.imageURLString == urlString && imageToCache != nil {
+                            self!.image = UIImage(data: data!)
+                            imageCache.setObject(imageToCache as AnyObject, forKey: self!.imageURLString as AnyObject)
                         }
                     }
                 }

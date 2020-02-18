@@ -12,7 +12,7 @@ import XCTest
 
 class ModelTests: XCTestCase {
 
-    let article = ImageInfo(title: "Artile Title", description: "dexcription text", imageHref: "https://")
+    let article = ImageInfo(title: "Artile Title", description: "description text", imageHref: "https://")
 
     func testArticle() {
 
