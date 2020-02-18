@@ -27,12 +27,17 @@ class LazyImageView: UIImageView {
         imageCache.removeAllObjects()
     }
     
-    /// Description : - It loads the images in the background from the URL String that is passed to this function
-    /// - Parameter urlString: It is the URL of the image that has to be downloaded to be shown in the table view
+    /// Description : - It loads the images in the background from
+    /// the URL String that is passed to this function
+    /// - Parameter urlString: It is the URL of the image that
+    /// has to be downloaded to be shown in the table view
     func loadImageUsingURLString(urlString: String) {
         
-        imageURLString = urlString // Holding Image URL to make sure Image gets in Right Place during Async Calls
-        self.image = Constants.noImage // Placeholder Image till Actual Image gets loaded Successfully
+        // Holding Image URL to make sure Image gets in Right Place during Async Calls
+        imageURLString = urlString
+        
+        // Placeholder Image till Actual Image gets loaded Successfully
+        self.image = Constants.noImage
         let url = URL(string: urlString)!
         
         // Returning Imaage if available in Cache
@@ -42,7 +47,9 @@ class LazyImageView: UIImageView {
         }
         
         // Since Image is not Available in Cache, fetching it from URL
-        URLSession.shared.dataTask(with: url, completionHandler: { [weak self] (data, response, error) in
+        URLSession.shared.dataTask(
+            with: url,
+            completionHandler: { [weak self] (data, response, error) in
             DispatchQueue.main.async {
                 if error != nil {
                     return
@@ -55,9 +62,12 @@ class LazyImageView: UIImageView {
                         let imageToCache = UIImage(data: data!)
                         
                         // Checking if current Image URL is same as Holding URL
-                        if self!.imageURLString == urlString && imageToCache != nil {
-                            self!.image = UIImage(data: data!)
-                            imageCache.setObject(imageToCache as AnyObject, forKey: self!.imageURLString as AnyObject)
+                        if self?.imageURLString == urlString && imageToCache != nil {
+                            self?.image = UIImage(data: data!)
+                            imageCache.setObject(
+                                imageToCache as AnyObject,
+                                forKey: self?.imageURLString as AnyObject
+                            )
                         }
                     }
                 }

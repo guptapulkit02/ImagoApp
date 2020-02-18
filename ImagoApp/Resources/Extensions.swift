@@ -15,7 +15,9 @@ extension UIView {
     
     // MARK: Public
     
-    /// Description:- anchor function is used to set the constraints for the view for which this function is called. (Mainly UIView)
+    /// Description:- anchor function is used
+    /// to set the constraints for the view for which
+    /// this function is called. (Mainly UIView)
     /// - Parameter top: sets the top constraint view
     /// - Parameter left: sets the left constraint view
     /// - Parameter bottom: sets the bottom constraint view
@@ -26,14 +28,39 @@ extension UIView {
     /// - Parameter rightConstant: sets the value for right
     /// - Parameter widthConstant: sets the width constant
     /// - Parameter heightConstant: sets the height constant
-    public func anchor(_ top: NSLayoutYAxisAnchor? = nil, left: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, right: NSLayoutXAxisAnchor? = nil, topConstant: CGFloat = 0, leftConstant: CGFloat = 0, bottomConstant: CGFloat = 0, rightConstant: CGFloat = 0, widthConstant: CGFloat = 0, heightConstant: CGFloat = 0) {
+    
+    public func anchor(
+        _ top: NSLayoutYAxisAnchor? = nil,
+        left: NSLayoutXAxisAnchor? = nil,
+        bottom: NSLayoutYAxisAnchor? = nil,
+        right: NSLayoutXAxisAnchor? = nil,
+        topConstant: CGFloat = 0,
+        leftConstant: CGFloat = 0,
+        bottomConstant: CGFloat = 0,
+        rightConstant: CGFloat = 0,
+        widthConstant: CGFloat = 0,
+        heightConstant: CGFloat = 0
+    ) {
         
         translatesAutoresizingMaskIntoConstraints = false
         
-        _ = anchorWithReturnAnchors(top, left: left, bottom: bottom, right: right, topConstant: topConstant, leftConstant: leftConstant, bottomConstant: bottomConstant, rightConstant: rightConstant, widthConstant: widthConstant, heightConstant: heightConstant)
+        _ = anchorWithReturnAnchors(
+            top,
+            left: left,
+            bottom: bottom,
+            right: right,
+            topConstant: topConstant,
+            leftConstant: leftConstant,
+            bottomConstant: bottomConstant,
+            rightConstant: rightConstant,
+            widthConstant: widthConstant,
+            heightConstant: heightConstant
+        )
     }
     
-    /// Description:- anchorWithReturnAnchors function is used to set the constraints for the view for which this function is called. (Mainly UIView)
+    /// Description:- anchorWithReturnAnchors function is used
+    /// to set the constraints for the view for which
+    /// this function is called. (Mainly UIView)
     /// - Parameter top: sets the top constraint view
     /// - Parameter left: sets the left constraint view
     /// - Parameter bottom: sets the bottom constraint view
@@ -44,7 +71,18 @@ extension UIView {
     /// - Parameter rightConstant: sets the value for right
     /// - Parameter widthConstant: sets the width constant
     /// - Parameter heightConstant: sets the height constant
-    public func anchorWithReturnAnchors(_ top: NSLayoutYAxisAnchor? = nil, left: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, right: NSLayoutXAxisAnchor? = nil, topConstant: CGFloat = 0, leftConstant: CGFloat = 0, bottomConstant: CGFloat = 0, rightConstant: CGFloat = 0, widthConstant: CGFloat = 0, heightConstant: CGFloat = 0) -> [NSLayoutConstraint] {
+    public func anchorWithReturnAnchors(
+        _ top: NSLayoutYAxisAnchor? = nil,
+        left: NSLayoutXAxisAnchor? = nil,
+        bottom: NSLayoutYAxisAnchor? = nil,
+        right: NSLayoutXAxisAnchor? = nil,
+        topConstant: CGFloat = 0,
+        leftConstant: CGFloat = 0,
+        bottomConstant: CGFloat = 0,
+        rightConstant: CGFloat = 0,
+        widthConstant: CGFloat = 0,
+        heightConstant: CGFloat = 0
+    ) -> [NSLayoutConstraint] {
         
         translatesAutoresizingMaskIntoConstraints = false
         

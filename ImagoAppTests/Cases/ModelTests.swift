@@ -12,25 +12,47 @@ import XCTest
 
 class ModelTests: XCTestCase {
 
-    let article = ImageInfo(title: "Artile Title", description: "description text", imageHref: "https://")
+    let article = ImageInfo(
+        title: "Artile Title",
+        description: "description text",
+        imageHref: "https://"
+    )
 
     func testArticle() {
 
-        XCTAssertEqual(article.title, "Artile Title", "title Proprty should not change post Initialization")
-        XCTAssertEqual(article.description, "dexcription text", "description Proprty should not change post Initialization")
-        XCTAssertEqual(article.imageHref, "https://", "imageHref Proprty should not change post Initialization")
+        XCTAssertEqual(
+            article.title,
+            "Artile Title",
+            "title Proprty should not change post Initialization"
+        )
+        XCTAssertEqual(
+            article.description,
+            "dexcription text",
+            "description Proprty should not change post Initialization"
+        )
+        XCTAssertEqual(
+            article.imageHref,
+            "https://",
+            "imageHref Proprty should not change post Initialization"
+        )
     }
 
     func testAboutTitle() {
 
         let about = ImagoData(title: "About Canada", rows: [article])
-        XCTAssertEqual(about.title, "About Canada", "title Proprty should not change post Initialization")
+        XCTAssertEqual(
+            about.title,
+            "About Canada",
+            "title Proprty should not change post Initialization"
+        )
     }
 
     func testAboutRows() {
 
         let about = ImagoData(title: "About Canada", rows: [article])
-        XCTAssertNotNil(about.rows, "rows Proprty should not change post Initialization")
+        XCTAssertNotNil(
+            about.rows,
+            "rows Proprty should not change post Initialization")
     }
 
 }

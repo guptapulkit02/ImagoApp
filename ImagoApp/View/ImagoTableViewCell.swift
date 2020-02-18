@@ -37,7 +37,8 @@ class ImagoTableViewCell: UITableViewCell {
     }()
     
     let cellImage: LazyImageView = {
-        let view = LazyImageView(image: Constants.noImage) // Placeholder Image till Image gets loaded successfully
+        // Placeholder Image till Image gets loaded successfully
+        let view = LazyImageView(image: Constants.noImage)
         view.contentMode = .scaleAspectFill
         view.layer.cornerRadius = 5
         view.clipsToBounds = true
@@ -74,13 +75,43 @@ class ImagoTableViewCell: UITableViewCell {
         self.addSubview(self.cellImage)
         self.addSubview(self.descriptionText)
         
-        cellImage.anchor(self.topAnchor, left: self.leftAnchor, bottom: nil, right: nil, topConstant: 8, leftConstant: 8, bottomConstant: 0, rightConstant: 0, widthConstant: Constants.imageImageSize, heightConstant: Constants.imageImageSize)
+        cellImage.anchor(
+            self.topAnchor,
+            left: self.leftAnchor,
+            bottom: nil,
+            right: nil,
+            topConstant: 8, leftConstant: 8,
+            bottomConstant: 0,
+            rightConstant: 0,
+            widthConstant: Constants.imageImageSize,
+            heightConstant: Constants.imageImageSize
+        )
             
-        imageTitle.anchor(self.cellImage.topAnchor, left: self.cellImage.rightAnchor, bottom: nil, right: self.rightAnchor, topConstant: 0, leftConstant: 12, bottomConstant: 8, rightConstant: 8, widthConstant: 0, heightConstant: 20)
+        imageTitle.anchor(
+            self.cellImage.topAnchor,
+            left: self.cellImage.rightAnchor,
+            bottom: nil,
+            right: self.rightAnchor,
+            topConstant: 0,
+            leftConstant: 12,
+            bottomConstant: 8,
+            rightConstant: 8,
+            widthConstant: 0,
+            heightConstant: 20
+        )
             
-        descriptionText.anchor(self.imageTitle.bottomAnchor, left: self.imageTitle.leftAnchor, bottom: nil, right: self.imageTitle.rightAnchor, topConstant: 8, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
-        
-        // Try fetching Image if Article has URL
+        descriptionText.anchor(
+            self.imageTitle.bottomAnchor,
+            left: self.imageTitle.leftAnchor,
+            bottom: nil,
+            right: self.imageTitle.rightAnchor,
+            topConstant: 8,
+            leftConstant: 0,
+            bottomConstant: 0,
+            rightConstant: 0,
+            widthConstant: 0,
+            heightConstant: 0
+        )
         if !imageInfo.imageURL.isEmpty {
             cellImage.loadImageUsingURLString(urlString: imageInfo.imageURL)
         }

@@ -11,7 +11,8 @@ import UIKit
 
 // MARK: ImageInfo
 
-// Making ImageInfo Model Decodable so that JSON decoder can directly map service response accordingly.
+// Making ImageInfo Model Decodable so that
+//JSON decoder can directly map service response accordingly.
 
 struct ImageInfo: Decodable {
     

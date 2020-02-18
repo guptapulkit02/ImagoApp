@@ -17,7 +17,10 @@ class ServiceTests: XCTestCase {
     
     func testServiceURL() {
 
-        XCTAssertEqual(Constants.serviceURLString, "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json", "Invalid service URL.")
+        XCTAssertEqual(
+            Constants.serviceURLString,
+            "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json", "Invalid service URL."
+        )
     }
 
     func testServiceData() {

@@ -34,7 +34,10 @@ class ImageViewControllerTableViewController: UITableViewController {
         }
     }
 
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+    override func viewWillTransition(
+        to size: CGSize,
+        with coordinator: UIViewControllerTransitionCoordinator
+    ) {
         
         super.viewWillTransition(to: size, with: coordinator)
         coordinator.animate(alongsideTransition: { (_) in
@@ -44,15 +47,24 @@ class ImageViewControllerTableViewController: UITableViewController {
         
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell {
         
         if imageError != nil {
-            let errorcell = tableView.dequeueReusableCell(withIdentifier: Constants.errorCellIdentifier, for: indexPath) as? ErrorCell
+            let errorcell = tableView.dequeueReusableCell(
+                withIdentifier: Constants.errorCellIdentifier,
+                for: indexPath
+                ) as? ErrorCell
             let errorViewModel = ErrorViewModel(error: imageError!)
             errorcell!.aboutError = errorViewModel
             return errorcell!
         } else {
-            let imageCell = tableView.dequeueReusableCell(withIdentifier: Constants.imageInfoCellIdentifier, for: indexPath) as? ImagoTableViewCell
+            let imageCell = tableView.dequeueReusableCell(
+                withIdentifier: Constants.imageInfoCellIdentifier,
+                for: indexPath
+                ) as? ImagoTableViewCell
             imageCell!.imageInfo = imageInfo?.rows[indexPath.row]
             return imageCell!
         }
@@ -67,12 +79,17 @@ class ImageViewControllerTableViewController: UITableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    override func tableView(
+        _ tableView: UITableView,
+        heightForRowAt indexPath: IndexPath
+    ) -> CGFloat {
         let heightFinal: CGFloat
         let cellSize = Utils.shared.getImageCellSize()
         if imageError == nil {
             
-            let descHeight = (imageInfo?.rows[indexPath.row].getDescriptionHeight(withWidth: cellSize.width))! + 46
+            let descHeight = (imageInfo?.rows[indexPath.row].getDescriptionHeight(
+                    withWidth: cellSize.width
+                ))! + 46
             if descHeight > cellSize.height {
                  heightFinal = (descHeight - cellSize.height) + cellSize.height
             } else {
@@ -90,7 +107,10 @@ class ImageViewControllerTableViewController: UITableViewController {
         
         tableView?.backgroundColor = Constants.imagoBackgroundColor
         setupNavBar()
-        tableView?.register(ImagoTableViewCell.self, forCellReuseIdentifier: Constants.imageInfoCellIdentifier)
+        tableView?.register(
+            ImagoTableViewCell.self,
+            forCellReuseIdentifier: Constants.imageInfoCellIdentifier
+        )
         tableView?.register(ErrorCell.self, forCellReuseIdentifier: Constants.errorCellIdentifier)
         refresher = getRefreshControl()
         tableView.refreshControl = refresher
@@ -125,14 +145,18 @@ class ImageViewControllerTableViewController: UITableViewController {
         return rControl
     }
     
-    /// Description :- It specifies what type of functionality the refresh will execute . here it will fetch the data again from the API service
+    /// Description :- It specifies what type of functionality
+    /// the refresh will execute . here it will fetch the
+    /// data again from the API service
     @objc private func handleRefresh() {
         DispatchQueue.main.async {
             Service.shared.getImageData()
         }
     }
     
-    /// Description:- It is used to clear the data that was previously fetched and shown in the table view and show the latest fetched data
+    /// Description:- It is used to clear the data that was
+    /// previously fetched and shown in the table view
+    /// and show the latest fetched data
     private func clearData() {
         
         if refresher.isRefreshing { refresher.endRefreshing() }
@@ -145,7 +169,9 @@ class ImageViewControllerTableViewController: UITableViewController {
 
 extension ImageViewControllerTableViewController: ImageServiceDelegate {
     
-    /// Description:- it is the delegate method that returns the reponse that we have received from the APi in form of an array of type ImageViewModel
+    /// Description:- it is the delegate method that returns
+    ///  the reponse that we have received from the APi in
+    ///  form of an array of type ImageViewModel
     /// - Parameter imageResponse: It accepts the value of type ImageViewModel.
     func handleImageData(imageResponse: ImageViewModel) {
         
@@ -154,20 +180,25 @@ extension ImageViewControllerTableViewController: ImageServiceDelegate {
             self.imageInfo = imageResponse
             self.navigationTitle?.text = self.imageInfo?.title
             self.navigationItem.titleView = self.navigationTitle
-            self.navigationItem.rightBarButtonItem?.isEnabled = true // Since data is available enabling navigation to CardsView
+            // Since data is available enabling navigation to CardsView
+            self.navigationItem.rightBarButtonItem?.isEnabled = true
             self.imageError = nil
             self.tableView?.reloadData()
         }
         
     }
     
-    /// Description:- it is the delegate method that is triggered at the time of any error while retrieving the data form the API. It is also triggered at the time of network issue.
+    /// Description:- it is the delegate method that is
+    /// triggered at the time of any error while retrieving
+    /// the data form the API. It is also triggered at the
+    /// time of network issue.
     /// - Parameter imageError: It contains the error description that is of type ImageError
     func handleImageError(imageError: ImageError) {
         
         clearData()
         self.imageError = imageError
-        navigationItem.rightBarButtonItem?.isEnabled = false // Since data is not available disabling navigation to CardsView
+        // Since data is not available disabling navigation to CardsView
+        navigationItem.rightBarButtonItem?.isEnabled = false
         tableView?.reloadData()
     }
 }

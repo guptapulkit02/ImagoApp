@@ -13,12 +13,19 @@ import UIKit
 
 protocol ImageServiceDelegate: class {
     
-    /// Description:- Delegate Function that is triggered when the response received from the API is valid and successfully parsed.
-    /// - Parameter imageResponse: The parameter passes the response as a callback to the delegate and can be fetched by the calss implementing this delegate.
+    /// Description:-Delegate Function that is triggered
+    /// when the response received from the API is valid and successfully parsed.
+    /// - Parameter imageResponse: The
+    /// parameter passes the response as a callback
+    /// to the delegate and can be fetched by the class implementing this delegate.
     func handleImageData(imageResponse: ImageViewModel)
     
-    /// Description:- Delegate Function that is triggered when the response received from the API is not valid and not successfully parsed or there is some network error.
-    /// - Parameter imageResponse: The parameter passes the error as a callback to the delegate and can be fetched by the class implementing this delegate.
+    /// Description:- Delegate Function that is triggered
+    /// when the response received from the API is not
+    /// valid and not successfully parsed or there is some network error.
+    /// - Parameter imageResponse: The parameter passes
+    /// the error as a callback to the delegate and can be fetched by
+    ///  the class implementing this delegate.
     func handleImageError(imageError: ImageError)
     
 }
@@ -33,7 +40,9 @@ class Service {
     
     // MARK: Public: getImageData
     
-    /// Description:- It gets the response from the URL that we call to get the description, Title and Image URl from the server using a URLSession.
+    /// Description:- It gets the response from
+    /// the URL that we call to get the description,
+    /// Title and Image URl from the server using a URLSession.
     public func getImageData() {
         
         do {
@@ -45,13 +54,17 @@ class Service {
             request.httpMethod = "GET"
             
             if network {
-                let task = session.dataTask(with: request, completionHandler: { [weak self] data, _, _ -> Void in
+                let task = session.dataTask(
+                    with: request,
+                    completionHandler: { [weak self] data, _, _ -> Void in
                     do {
                         if let receivedData = data {
                             let returnData: String = String(decoding: receivedData, as: UTF8.self)
-                            self!.parseJSONString(data: returnData)
+                            self?.parseJSONString(data: returnData)
                         } else {
-                            self!.delegate?.handleImageError(imageError: ImageError.serverCallFailure)
+                            self?.delegate?.handleImageError(
+                                imageError: ImageError.serverCallFailure
+                            )
                         }
                     }
                 })
@@ -78,7 +91,8 @@ class Service {
     private init() {}
     
     /// Description:- parseJSONString :- It is used to parse the string that we received as response
-    ///                         from the API call and convert it into a JSON which can be easily utilised to get the description , title and image URL
+    ///                         from the API call and convert it into a JSON which can
+    ///                         be easily utilised to get the description , title and image URL
     /// - Parameter data: a response received from the API call in the form of a string. 
     private func parseJSONString(data: String) {
         do {

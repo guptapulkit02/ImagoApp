@@ -38,13 +38,21 @@ struct InfoViewModel {
     
     // Calculating Probable Height for Description text for given Card width
     
-    /// - getDescriptionHeight(withWidth: CGFloat)->CGFloat - returns the height of the label it will occupy inside the cell.
+    /// - getDescriptionHeight(withWidth: CGFloat)->CGFloat -
+    /// returns the height of the label it will occupy inside the cell.
     /// - Parameter withWidth: it is the width of the label that will contain the description
     func getDescriptionHeight(withWidth: CGFloat) -> CGFloat {
 
         let approxwidth = withWidth
         let size = CGSize(width: approxwidth, height: 1000)
-        let estimatedFrame = NSString(string: description).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: Constants.imageDescriptionFont], context: nil)
+        let estimatedFrameString = NSString(string: description)
+        let attributedString = [NSAttributedString.Key.font: Constants.imageDescriptionFont]
+        let estimatedFrame = estimatedFrameString.boundingRect(
+            with: size,
+            options: .usesLineFragmentOrigin,
+            attributes: attributedString,
+            context: nil
+        )
         return estimatedFrame.height
     }
 }

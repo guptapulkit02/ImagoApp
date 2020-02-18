@@ -30,7 +30,9 @@ class UtilsTests: XCTestCase {
     }
     func testParsingJSONString() {
         do {
-            let result = try Utils.shared.parseData(data: "{\"title\": \"About Canada\", \"rows\": []}")
+            let result = try Utils.shared.parseData(data:
+                "{\"title\": \"About Canada\", \"rows\": []}"
+            )
             XCTAssertEqual(result.title, "About Canada")
         } catch {
             XCTFail("Failed")
